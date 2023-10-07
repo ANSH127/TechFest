@@ -1,3 +1,17 @@
+::-webkit-scrollbar{
+  width:8px !important;
+}
+::-webkit-scrollbar-track{
+  background-color:#f68223 ;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb{
+  background-color:#F4F4F4;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #f68223;
+}
 
 input{
   outline: none;

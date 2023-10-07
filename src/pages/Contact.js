@@ -89,6 +89,7 @@ export default function ContactPage() {
 
 
             </Box>
+            <div style={{height:'600px'}} ></div>
 
 
         </Box>
