@@ -12,7 +12,9 @@
 ::-webkit-scrollbar-thumb:hover{
   background-color: #f68223;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 input{
   outline: none;
   border: 1px solid black;

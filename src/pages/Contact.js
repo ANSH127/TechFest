@@ -61,7 +61,14 @@ export default function ContactPage() {
                     color: '#ffffff',
 
                 }} >
-                <div>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '100%'
+                }}
+                >
 
                     <input type="text" id="name" name="name" placeholder="Your name.."
                         value={name} onChange={(e) => setName(e.target.value)}
@@ -89,7 +96,6 @@ export default function ContactPage() {
 
 
             </Box>
-            <div style={{height:'600px'}} ></div>
 
 
         </Box>
