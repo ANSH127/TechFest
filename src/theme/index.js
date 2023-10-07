@@ -1,4 +1,5 @@
 export const  theme = {
     bgcolor: '#fff',
-    color: 'black'
+    color: 'black',
+    secondary: '#f68223'
 }

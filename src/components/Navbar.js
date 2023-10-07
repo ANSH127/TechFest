@@ -16,9 +16,9 @@ import { theme } from '../theme/index';
 
 const pages = [
     { name: 'Home', to: '/' },
-    { name: 'About Us', to: '/skills' },
-    { name: 'Event', to: '/projects' },
-    { name: 'Sponser', to: '/projects' },
+    { name: 'About Us', to: '/about' },
+    { name: 'Event', to: '/event' },
+    { name: 'Sponser', to: '/sponser' },
     { name: 'Contact', to: '/contact' },
 ];
 export default function Navbar() {
