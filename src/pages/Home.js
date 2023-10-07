@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid, Typography, Card, CardMedia, CardContent, Button, Divider, Box } from '@mui/material';
 import { theme } from '../theme';
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const HomePage = () => {
 
@@ -9,7 +11,7 @@ const HomePage = () => {
             {/* //make a grid  in one side there is a image and in other side there is a text */}
             <Grid container spacing={0} sx={{ marginTop: '2rem' }}>
                 <Grid item xs={12} md={7} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <img src='./images/1.gif' alt="hero" width={600} height={400} />
+                    <img src='./images/3.gif' alt="hero" width={600} height={400} />
 
                 </Grid>
                 <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -27,8 +29,15 @@ const HomePage = () => {
                         }}
 
                         >
-                            Explore | Create | Showcase
-
+                            <Typewriter
+                                words={['Explore', 'Create', 'Showcase']}
+                                loop={0}
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+                            />
                         </Typography>
                     </Box>
 
@@ -44,7 +53,7 @@ const HomePage = () => {
                     Upcoming <span style={{color:theme.secondary}}>Events</span>
                 </Typography>
             </Grid>
-            <Grid container spacing={3}>
+            <Grid container spacing={2} sx={{paddingX:'10px'}} >
                 <Grid item xs={12} sm={6} md={4}>
                     <Card>
                         <CardMedia
@@ -124,7 +133,7 @@ const HomePage = () => {
                     Our <span style={{color:theme.secondary}}>Sponsors</span>
                 </Typography>
             </Grid>
-            <Grid container spacing={3}>
+            <Grid container spacing={2} sx={{paddingX:'10px'}}>
                 <Grid item xs={6} sm={4} md={3}>
                     <Card>
                         <CardMedia
@@ -174,6 +183,18 @@ const HomePage = () => {
                     </Card>
                 </Grid>
             </Grid>
+            {/* Footer */}
+            <Divider sx={{marginY:"20px"}}/>
+            <Grid item xs={12}  sx={{
+                marginY:"20px"
+            }} >
+                <Typography variant="h6" align="center"
+                sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem',paddingX:'10px' }}
+                >
+                    CopyRight &copy; 2023 <span style={{color:theme.secondary}}>TECHFEST</span>
+                </Typography>
+            </Grid>
+
             
 
             
