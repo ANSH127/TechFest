@@ -1,44 +1,47 @@
 import React from 'react';
-import { Grid, Typography, Card, CardMedia, CardContent, Button, Divider } from '@mui/material';
+import { Grid, Typography, Card, CardMedia, CardContent, Button, Divider, Box } from '@mui/material';
+import { theme } from '../theme';
 
 const HomePage = () => {
 
     return (
-        <Grid container spacing={3}>
-            <Grid item xs={12}>
-                <Typography variant="h4" align="center">
-                    Welcome to TechFest!
-                </Typography>
-            </Grid>
-            <Grid item xs={12}>
-                <Card>
-                    <CardMedia
-                        sx={{
-                            height: 0,
-                            paddingTop: '56.25%', // 16:9
+        <Box sx={{ flexGrow: 1 }}>
+            {/* //make a grid  in one side there is a image and in other side there is a text */}
+            <Grid container spacing={0} sx={{ marginTop: '2rem' }}>
+                <Grid item xs={12} md={7} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img src='./images/1.gif' alt="hero" width={600} height={400} />
+
+                </Grid>
+                <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Box sx={{ flexGrow: 1 }}>
+                        <Typography variant="h4" component="h2" gutterBottom sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem',paddingX:'10px' }}>
+                            DISCOVER  <span style={{color:theme.secondary}}>TECHFEST</span> 2023 
+                          
+                        </Typography>
+                        <Typography
+                            variant="h6"
+                            component="h2"
+                            gutterBottom
+                            sx={{ display:'inline-block',fontFamily: 'monospace', fontWeight: 400, letterSpacing: '.2rem' 
+                            ,backgroundColor:theme.secondary,padding:'0.3rem',borderRadius:'0.5rem',color:theme.color
                         }}
-                        image="https://via.placeholder.com/600x400"
-                        title="TechFest"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            TechFest 2023
+
+                        >
+                            Explore | Create | Showcase
+
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-                        </Typography>
-                    </CardContent>
-                    <Button size="small" color="primary">
-                        Register Now
-                    </Button>
-                </Card>
+                    </Box>
+
+                </Grid>
+
+
             </Grid>
-            <Grid item xs={12}>
-                <Divider />
-            </Grid>
-            <Grid item xs={12}>
-                <Typography variant="h5" align="center">
-                    Upcoming Events
+            {/* upcoming events */}
+            <Grid item xs={12} sx={{marginY:"20px"}} >
+                <Typography variant="h3" align="center"
+                sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem',paddingX:'10px' }}
+                >
+                    Upcoming <span style={{color:theme.secondary}}>Events</span>
                 </Typography>
             </Grid>
             <Grid container spacing={3}>
@@ -112,12 +115,13 @@ const HomePage = () => {
                     </Card>
                 </Grid>
             </Grid>
-            <Grid item xs={12}>
-                <Divider />
-            </Grid>
-            <Grid item xs={12}>
-                <Typography variant="h5" align="center">
-                    Sponsors
+
+            {/* Our Sponser */}
+            <Grid item xs={12} sx={{marginY:"20px"}} >
+                <Typography variant="h3" align="center"
+                sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem',paddingX:'10px' }}
+                >
+                    Our <span style={{color:theme.secondary}}>Sponsors</span>
                 </Typography>
             </Grid>
             <Grid container spacing={3}>
@@ -170,27 +174,19 @@ const HomePage = () => {
                     </Card>
                 </Grid>
             </Grid>
-            <Grid item xs={12}>
-                <Divider />
-            </Grid>
-            <Grid item xs={12}>
-                <Typography 
-                variant="h5" align="center"
-                >
-                    CopyRight &copy; 2023 TechFest
-                </Typography>
+            
+
+            
+            
 
 
-            </Grid>
+        </Box>
 
 
 
 
 
 
-
-
-        </Grid>
     );
 };
 
