@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Card, CardMedia, CardContent, Button, Divider, Box } from '@mui/material';
+import { Grid, Typography, Card, CardMedia, CardContent, Button, Box } from '@mui/material';
 import { theme } from '../theme';
 import { Typewriter } from 'react-simple-typewriter'
 
@@ -17,7 +17,7 @@ const HomePage = () => {
                         alignItems: 'center',
 
                     }}>
-                    <img src='./images/3.gif' alt="hero" 
+                    <img src='./images/tech.gif' alt="hero" 
                     style={{width:'100%',height:'100%'}}
                     />
 
@@ -42,7 +42,7 @@ const HomePage = () => {
                                 words={['Explore', 'Create', 'Showcase']}
                                 loop={0}
                                 cursor
-                                cursorStyle='|'
+                                cursorStyle=''
                                 typeSpeed={70}
                                 deleteSpeed={50}
                                 delaySpeed={1000}
@@ -192,17 +192,7 @@ const HomePage = () => {
                     </Card>
                 </Grid>
             </Grid>
-            {/* Footer */}
-            <Divider sx={{ marginY: "20px" }} />
-            <Grid item xs={12} sx={{
-                marginY: "20px"
-            }} >
-                <Typography variant="h6" align="center"
-                    sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', paddingX: '10px' }}
-                >
-                    CopyRight &copy; 2023 <span style={{ color: theme.secondary }}>TECHFEST</span>
-                </Typography>
-            </Grid>
+            
 
 
 

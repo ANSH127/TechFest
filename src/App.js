@@ -11,6 +11,7 @@ import About from './pages/About';
 import Event from './pages/Event';
 import Sponser from './pages/Sponser';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
 
 
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

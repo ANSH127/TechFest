@@ -18,7 +18,7 @@ const pages = [
     { name: 'Home', to: '/' },
     { name: 'About Us', to: '/about' },
     { name: 'Event', to: '/event' },
-    { name: 'Sponser', to: '/sponser' },
+    { name: 'Sponsor', to: '/sponser' },
     { name: 'Contact', to: '/contact' },
 ];
 export default function Navbar() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Typography, Button } from '@mui/material'
-import {theme} from '../theme/index'
+import { theme } from '../theme/index'
 
 export default function ContactPage() {
     const [name, setName] = React.useState('');
@@ -35,17 +35,10 @@ export default function ContactPage() {
             color: '#ffffff',
             marginTop: '3rem'
         }}>
-
-            <Typography variant="h6" align='center'
-                sx={{
-                    fontFamily: 'monospace',
-                    fontWeight: 600,
-                    color:theme.color,
-                    textDecoration: 'none',
-                    fontSize: '1.5rem',
-                }}
+            <Typography variant="h3" align="center"
+                sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px',color:theme.color }}
             >
-                Contact Me
+                Contact <span style={{ color: theme.secondary }}>Me</span>
             </Typography>
             <Box
                 sx={{
@@ -89,9 +82,9 @@ export default function ContactPage() {
 
 
 
-                <div style={{ marginTop: '10px', textAlign: 'center'}}>
+                <div style={{ marginTop: '10px', textAlign: 'center' }}>
 
-                    <Button onClick={handleSubmit} color='secondary'  variant="contained" >Submit</Button>
+                    <Button onClick={handleSubmit} color='secondary' variant="contained" >Submit</Button>
                 </div>
 
 
