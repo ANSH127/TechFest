@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid, Typography, Card, CardMedia, CardContent, Button, Box } from '@mui/material';
+import { Grid, Typography, Card, CardMedia, Box } from '@mui/material';
 import { theme } from '../theme';
 import { Typewriter } from 'react-simple-typewriter'
+import EventCard from '../components/EventCard';
 
 
 const HomePage = () => {
@@ -17,8 +18,8 @@ const HomePage = () => {
                         alignItems: 'center',
 
                     }}>
-                    <img src='./images/tech.gif' alt="hero" 
-                    style={{width:'100%',height:'100%'}}
+                    <img src='./images/tech.gif' alt="hero"
+                        style={{ width: '100%', height: '100%' }}
                     />
 
                 </Grid>
@@ -64,73 +65,19 @@ const HomePage = () => {
             </Grid>
             <Grid container spacing={2} sx={{ paddingX: '10px' }} >
                 <Grid item xs={12} sm={6} md={4}>
-                    <Card>
-                        <CardMedia
-                            sx={{
-                                height: 0,
-                                paddingTop: '56.25%', // 16:9
-                            }}
-                            image="https://via.placeholder.com/600x400"
-                            title="Event 1"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Event 1
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </Typography>
-                        </CardContent>
-                        <Button size="small" color="primary">
-                            Learn More
-                        </Button>
-                    </Card>
+                <EventCard title="Web Development" desc="
+                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
+
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
-                    <Card>
-                        <CardMedia
-                            sx={{
-                                height: 0,
-                                paddingTop: '56.25%', // 16:9
-                            }}
-                            image="https://via.placeholder.com/600x400"
-                            title="Event 2"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Event 2
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </Typography>
-                        </CardContent>
-                        <Button size="small" color="primary">
-                            Learn More
-                        </Button>
-                    </Card>
+                <EventCard title="Web Development" desc="
+                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
+
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
-                    <Card>
-                        <CardMedia
-                            sx={{
-                                height: 0,
-                                paddingTop: '56.25%', // 16:9
-                            }}
-                            image="https://via.placeholder.com/600x400"
-                            title="Event 3"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Event 3
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </Typography>
-                        </CardContent>
-                        <Button size="small" color="primary">
-                            Learn More
-                        </Button>
-                    </Card>
+                <EventCard title="Web Development" desc="
+                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
+
                 </Grid>
             </Grid>
 
@@ -192,7 +139,7 @@ const HomePage = () => {
                     </Card>
                 </Grid>
             </Grid>
-            
+
 
 
 

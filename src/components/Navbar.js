@@ -38,21 +38,21 @@ export default function Navbar() {
                 backgroundColor: theme.bgcolor,
                 // color: theme.color, 
                 borderBottom: '1px solid #000',
-                padding: '0 1rem',
+                // padding: '0 1rem',
                 paddingY: '0.4rem',
+                
                 background: 'transparent',
                 backdropFilter: 'blur(10px)',
             }}
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
                         sx={{
-                            mr: 2,
+                            // mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
                             fontWeight: 700,
