@@ -1,7 +1,7 @@
 import React from 'react'
 import { theme } from '../theme'
 import { Box, Typography, Grid } from '@mui/material'
-import { Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
+import { Card, CardMedia, CardContent, CardActions} from '@mui/material';
 
 export default function Event() {
   return (

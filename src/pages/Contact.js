@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Button } from '@mui/material'
+import { Box, Typography} from '@mui/material'
 import { theme } from '../theme/index'
 
 export default function ContactPage() {
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 <div style={{ marginTop: '10px', textAlign: 'center' }}>
 
 
-                    <button class="orange-button">Submit</button>
+                    <button onClick={handleSubmit} class="orange-button">Submit</button>
                 </div>
 
 
