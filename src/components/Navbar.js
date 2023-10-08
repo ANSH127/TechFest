@@ -62,7 +62,12 @@ export default function Navbar() {
                         }}
                     >
                         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                            <img src='./images/logo.webp' alt="logo" width={200} height={60} />
+                            <img src='./images/logo2.png' alt="logo" style={{
+                                width: '90px',
+                                height: '70px',
+                                
+                            
+                            }} />
                         </Link>
                     </Typography>
 
@@ -84,7 +89,12 @@ export default function Navbar() {
                         }}
                     >
                         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                            <img src='./images/logo.webp' alt="logo" width={160} height={40} />
+                        <img src='./images/logo2.png' alt="logo" style={{
+                                width: '90px',
+                                height: '70px',
+                                
+                            
+                            }} />
                         </Link>
                     </Typography>
 

@@ -10,7 +10,7 @@ export default function About() {
       margin: 'auto',
       width: {
         xs: '90%',
-        md: '70%',
+        md: '80%',
       },
       color: '#ffffff',
       marginTop: '3rem'
