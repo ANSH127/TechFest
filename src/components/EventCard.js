@@ -1,6 +1,7 @@
 import React from 'react'
 import { theme } from '../theme'
 import { Card, CardMedia, CardContent, CardActions,Typography } from '@mui/material';
+import {format} from 'date-fns'
 
 export default function EventCard(props) {
     return (
@@ -11,8 +12,8 @@ export default function EventCard(props) {
             <CardMedia
                 component="img"
                 height="150"
-                image="./images/e1.jpeg"
-                alt="Upcoming Event"
+                image={props.img}
+                alt={props.title}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div"
@@ -42,7 +43,9 @@ export default function EventCard(props) {
                         textAlign: 'justify',
                     }}
                 >
-                    <span style={{ color: theme.secondary }}>Date:</span> {props.date} <br />
+                    <span style={{ color: theme.secondary }}>Date:</span>
+                    {format(new Date(props.date), 'dd MMMM yyyy')}
+                      <br />
                     <span style={{ color: theme.secondary }}>Time:</span> {props.time}
                 </Typography>
 

@@ -3,9 +3,20 @@ import { Grid, Typography, Card, CardMedia, Box } from '@mui/material';
 import { theme } from '../theme';
 import { Typewriter } from 'react-simple-typewriter'
 import EventCard from '../components/EventCard';
+import { client,builder } from '../api/SanityClient';
 
 
 const HomePage = () => {
+  const [events, setEvents] = React.useState([]);
+
+    React.useEffect(() => {
+        const fetchEvents = async () => {
+            const events = await client.fetch(`*[_type == "Events"] | order(_updatedAt desc) `);
+            setEvents(events);
+        }
+        fetchEvents();
+
+    }, [])
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -64,21 +75,11 @@ const HomePage = () => {
                 </Typography>
             </Grid>
             <Grid container spacing={2} sx={{ paddingX: '10px' }} >
-                <Grid item xs={12} sm={6} md={4}>
-                <EventCard title="Web Development" desc="
-                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
-
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                <EventCard title="Web Development" desc="
-                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
-
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                <EventCard title="Web Development" desc="
-                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
-
-                </Grid>
+                {events.map((event) => (
+                    <Grid item xs={12} sm={6} md={4} key={event._id}>
+                        <EventCard title={event.Title} desc={event.Description} date={event.Date} time={event.time} img={builder.image(event.Image).url()} />
+                    </Grid>
+                ))}
             </Grid>
 
             {/* Our Sponser */}

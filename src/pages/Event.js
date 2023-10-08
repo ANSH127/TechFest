@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { theme } from '../theme';
 import { Box, Typography, Grid } from '@mui/material';
 import EventCard from '../components/EventCard'
+import { client, builder } from '../api/SanityClient';
+
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Event() {
+
+
+  const [events, setEvents] = React.useState([]);
+
+
+
+
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const events = await client.fetch(`*[_type == "Events"] | order(_updatedAt desc) `);
+      setEvents(events);
+    }
+    fetchEvents();
+
+  }, [])
+
+  if (events.length === 0) return (
+    <Backdrop
+      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={true}
+    >
+      <CircularProgress color="inherit" />
+    </Backdrop>
+  )
+
+
   return (
     <Box sx={{
       margin: 'auto',
@@ -30,25 +61,17 @@ export default function Event() {
 
 
         }}>
+        {events.map((event) => (
+          <Grid item xs={12} sm={6} md={4} key={event._id}>
+            <EventCard title={event.Title} desc={event.Description} date={event.Date} time={event.time} img={builder.image(event.Image).url()} />
+          </Grid>
+        ))
 
-        <Grid item xs={12} sm={6} md={4}>
-          <EventCard title="Web Development" desc="
-                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <EventCard title="Web Development" desc="
-                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <EventCard title="Web Development" desc="
-                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <EventCard title="Web Development" desc="
-                    This is a WorkShop  on Web Development using ReactJS and NodeJS and MongoDB as backend..." date="October 10, 2021 " time="10:00 AM-12:00 PM" img="" />
-        </Grid>
+        }
+
 
       </Grid>
     </Box>
+
   )
 }
