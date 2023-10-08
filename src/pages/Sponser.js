@@ -11,7 +11,7 @@ const Sponsor = () => {
         marginTop: '3rem',
       }}
     >
-      <Typography variant="h3" align="center"
+      <Typography variant="h4" align="center"
         sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px' }}
       >
         Our <span style={{ color: theme.secondary }}>Sponsors</span>

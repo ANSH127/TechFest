@@ -14,7 +14,7 @@ export default function Event() {
       color: '#ffffff',
       marginTop: '3rem'
     }}>
-      <Typography variant="h3" align="center"
+      <Typography variant="h4" align="center"
         sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color }}
       >
         Upcoming <span style={{ color: theme.secondary }}>Events</span>

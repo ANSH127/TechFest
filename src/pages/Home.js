@@ -57,7 +57,7 @@ const HomePage = () => {
             </Grid>
             {/* upcoming events */}
             <Grid item xs={12} sx={{ marginY: "20px" }} >
-                <Typography variant="h3" align="center"
+                <Typography variant="h4" align="center"
                     sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', paddingX: '10px' }}
                 >
                     Upcoming <span style={{ color: theme.secondary }}>Events</span>
@@ -83,7 +83,7 @@ const HomePage = () => {
 
             {/* Our Sponser */}
             <Grid item xs={12} sx={{ marginY: "20px" }} >
-                <Typography variant="h3" align="center"
+                <Typography variant="h4" align="center"
                     sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', paddingX: '10px' }}
                 >
                     Our <span style={{ color: theme.secondary }}>Sponsors</span>

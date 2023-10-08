@@ -55,8 +55,8 @@ export default function EventCard(props) {
 
                 }}
             >
-                <button class="orange-button">Register</button>
-                <button class="orange-button">Details</button>
+                <button className="orange-button">Register</button>
+                <button className="orange-button">Details</button>
             </CardActions>
         </Card>
     )

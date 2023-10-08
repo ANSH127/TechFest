@@ -35,8 +35,9 @@ export default function ContactPage() {
             color: '#ffffff',
             marginTop: '3rem'
         }}>
-            <Typography variant="h3" align="center"
-                sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color }}
+            <Typography variant="h4" align="center"
+                sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color
+            }}
             >
                 Contact <span style={{ color: theme.secondary }}>Me</span>
             </Typography>
@@ -85,7 +86,7 @@ export default function ContactPage() {
                 <div style={{ marginTop: '10px', textAlign: 'center' }}>
 
 
-                    <button onClick={handleSubmit} class="orange-button">Submit</button>
+                    <button onClick={handleSubmit} className="orange-button">Submit</button>
                 </div>
 
 
