@@ -35,7 +35,7 @@ export default function Navbar() {
 
         <AppBar position="sticky"
             sx={{
-                backgroundColor: theme.bgcolor, 
+                backgroundColor: theme.bgcolor,
                 // color: theme.color, 
                 borderBottom: '1px solid #000',
                 padding: '0 1rem',
@@ -61,13 +61,24 @@ export default function Navbar() {
                             textDecoration: 'none',
                         }}
                     >
-                        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
                             <img src='./images/logo2.png' alt="logo" style={{
                                 width: '90px',
                                 height: '70px',
-                                
-                            
+
+
                             }} />
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    paddingTop: '14px',
+                                    fontSize: '30px',
+                                    marginLeft: '-18px',
+                                }}
+                            >
+
+                                ECHFEST
+                            </span>
                         </Link>
                     </Typography>
 
@@ -88,13 +99,25 @@ export default function Navbar() {
                             textDecoration: 'none',
                         }}
                     >
-                        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        <img src='./images/logo2.png' alt="logo" style={{
-                                width: '90px',
+                        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+                            <img src='./images/logo2.png' alt="logo" style={{
+                                width: '100px',
                                 height: '70px',
-                                
-                            
+
+
                             }} />
+
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    paddingTop: '17px',
+                                    fontSize: '30px',
+                                    marginLeft: '-18px',
+                                }}
+                            >
+
+                                ECHFEST
+                            </span>
                         </Link>
                     </Typography>
 
@@ -124,7 +147,7 @@ export default function Navbar() {
                             onClick={handleOpenNavMenu}
                             color="black"
                         >
-                            <MenuIcon   />
+                            <MenuIcon />
                         </IconButton>
                         <Menu
                             id="menu-appbar"
