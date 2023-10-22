@@ -1,7 +1,8 @@
 import React from 'react'
 import { theme } from '../theme'
-import { Card, CardMedia, CardContent, CardActions,Typography } from '@mui/material';
-import {format} from 'date-fns'
+import { Card, CardMedia, CardContent, CardActions, Typography } from '@mui/material';
+import { format } from 'date-fns'
+import { Link } from 'react-router-dom'
 
 export default function EventCard(props) {
     return (
@@ -21,7 +22,7 @@ export default function EventCard(props) {
                 >
                     {props.title}
                 </Typography>
-                <Typography variant="body1" color="text.secondary"
+                {/* <Typography variant="body1" color="text.secondary"
                     sx={{
                         color: 'grey',
                         textAlign: 'justify',
@@ -33,7 +34,7 @@ export default function EventCard(props) {
                     }}
                 >
                     {props.desc}
-                </Typography>
+                </Typography> */}
                 <Typography variant="h6" color="text.secondary"
                     sx={{
                         color: 'black',
@@ -45,7 +46,7 @@ export default function EventCard(props) {
                 >
                     <span style={{ color: theme.secondary }}>Date:</span>
                     {format(new Date(props.date), 'dd MMMM yyyy')}
-                      <br />
+                    <br />
                     <span style={{ color: theme.secondary }}>Time:</span> {props.time}
                 </Typography>
 
@@ -59,7 +60,11 @@ export default function EventCard(props) {
                 }}
             >
                 <button className="orange-button">Register</button>
-                <button className="orange-button">Details</button>
+                <Link to={`/event/${props.slug}`} style={{ textDecoration: 'none',paddingLeft:'10px' }}>
+                    <button className="orange-button"  >
+                        Details
+                    </button>
+                </Link>
             </CardActions>
         </Card>
     )

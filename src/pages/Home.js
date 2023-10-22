@@ -77,7 +77,9 @@ const HomePage = () => {
             <Grid container spacing={2} sx={{ paddingX: '10px' }} >
                 {events.map((event) => (
                     <Grid item xs={12} sm={6} md={4} key={event._id}>
-                        <EventCard title={event.Title} desc={event.Description} date={event.Date} time={event.time} img={builder.image(event.Image).url()} />
+                        <EventCard title={event.Title} desc={event.Description} date={event.Date} time={event.time} img={builder.image(event.Image).url()}
+                            slug={event.slug.current}
+                         />
                     </Grid>
                 ))}
             </Grid>
