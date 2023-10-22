@@ -11,7 +11,7 @@ const HomePage = () => {
 
     React.useEffect(() => {
         const fetchEvents = async () => {
-            const events = await client.fetch(`*[_type == "Events"] | order(_updatedAt desc) `);
+            const events = await client.fetch(`*[_type == "Events"] | order(Date asc)[0...3] `);
             setEvents(events);
         }
         fetchEvents();
