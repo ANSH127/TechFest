@@ -4,6 +4,8 @@ import { theme } from '../theme';
 import { Typewriter } from 'react-simple-typewriter'
 import EventCard from '../components/EventCard';
 import { client,builder } from '../api/SanityClient';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 const HomePage = () => {
@@ -17,6 +19,15 @@ const HomePage = () => {
         fetchEvents();
 
     }, [])
+
+    if (!events) return (
+        <Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={true}
+        >
+            <CircularProgress color="inherit" />
+        </Backdrop>
+    )
 
     return (
         <Box sx={{ flexGrow: 1 }}>
