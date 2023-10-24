@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Card, CardMedia, Box } from '@mui/material';
+import { Grid, Typography, Box } from '@mui/material';
 import { theme } from '../theme';
 import { Typewriter } from 'react-simple-typewriter'
 import EventCard from '../components/EventCard';

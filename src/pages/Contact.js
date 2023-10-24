@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Typography} from '@mui/material'
 import { theme } from '../theme/index'
+import supabase from '../api/SupabaseClient';
 
 export default function ContactPage() {
     const [name, setName] = React.useState('');
@@ -8,7 +9,7 @@ export default function ContactPage() {
     const [phone, setPhone] = React.useState('');
     const [message, setMessage] = React.useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if (name === '' || email === '' || phone === '' || message === '') {
             alert('Please fill all the fields');
             return;
@@ -21,7 +22,16 @@ export default function ContactPage() {
             alert('Please enter a valid phone number');
             return;
         }
+
+        const {error } = await supabase.from('contact').insert([
+            { name, email, phone, message },
+        ]);
+        if (error) {
+            alert('Something went wrong');
+            return;
+        }
         alert('Your message has been sent');
+
 
     }
     return (
