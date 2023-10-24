@@ -13,6 +13,7 @@ import Sponser from './pages/Sponser';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EventDetails from './pages/EventDetails';
+import RegisterPage  from './pages/Register';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
           <Route path="/event" element={<Event />} />
           <Route path="/event/:slug/" element={<EventDetails />} />
           <Route path="/sponser" element={<Sponser />} />
+          <Route path="/register/:slug" element={<RegisterPage />} />
 
 
         </Routes>

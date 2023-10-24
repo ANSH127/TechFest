@@ -59,7 +59,9 @@ export default function EventCard(props) {
 
                 }}
             >
+                <Link to={`/register/${props.slug}`} style={{ textDecoration: 'none' }}>
                 <button className="orange-button">Register</button>
+                </Link>
                 <Link to={`/event/${props.slug}`} style={{ textDecoration: 'none',paddingLeft:'10px' }}>
                     <button className="orange-button"  >
                         Details
