@@ -3,24 +3,31 @@ import { Grid, Typography, Card, CardMedia, Box } from '@mui/material';
 import { theme } from '../theme';
 import { Typewriter } from 'react-simple-typewriter'
 import EventCard from '../components/EventCard';
-import { client,builder } from '../api/SanityClient';
+import { client, builder } from '../api/SanityClient';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
 const HomePage = () => {
-  const [events, setEvents] = React.useState([]);
+    const [events, setEvents] = React.useState([]);
+    const [sponsor, setSponsor] = React.useState([]);
 
     React.useEffect(() => {
         const fetchEvents = async () => {
             const events = await client.fetch(`*[_type == "Events"] | order(Date asc)[0...3] `);
             setEvents(events);
         }
+        const fetchSponsor = async () => {
+            const sponsor = await client.fetch(`*[_type == "Sponsers"]`);
+            setSponsor(sponsor);
+            console.log(sponsor);
+        }
         fetchEvents();
+        fetchSponsor();
 
     }, [])
 
-    if (!events) return (
+    if (!events || !sponsor) return (
         <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
             open={true}
@@ -90,7 +97,7 @@ const HomePage = () => {
                     <Grid item xs={12} sm={6} md={4} key={event._id}>
                         <EventCard title={event.Title} desc={event.Description} date={event.Date} time={event.time} img={builder.image(event.Image).url()}
                             slug={event.slug.current}
-                         />
+                        />
                     </Grid>
                 ))}
             </Grid>
@@ -104,54 +111,26 @@ const HomePage = () => {
                 </Typography>
             </Grid>
             <Grid container spacing={2} sx={{ paddingX: '10px' }}>
-                <Grid item xs={6} sm={4} md={3}>
-                    <Card>
-                        <CardMedia
-                            sx={{
-                                height: 0,
-                                paddingTop: '56.25%', // 16:9
-                            }}
-                            image="https://via.placeholder.com/300x200"
-                            title="Sponsor 1"
-                        />
-                    </Card>
-                </Grid>
-                <Grid item xs={6} sm={4} md={3}>
-                    <Card>
-                        <CardMedia
-                            sx={{
-                                height: 0,
-                                paddingTop: '56.25%', // 16:9
-                            }}
-                            image="https://via.placeholder.com/300x200"
-                            title="Sponsor 2"
-                        />
-                    </Card>
-                </Grid>
-                <Grid item xs={6} sm={4} md={3}>
-                    <Card>
-                        <CardMedia
-                            sx={{
-                                height: 0,
-                                paddingTop: '56.25%', // 16:9
-                            }}
-                            image="https://via.placeholder.com/300x200"
-                            title="Sponsor 3"
-                        />
-                    </Card>
-                </Grid>
-                <Grid item xs={6} sm={4} md={3}>
-                    <Card>
-                        <CardMedia
-                            sx={{
-                                height: 0,
-                                paddingTop: '56.25%', // 16:9
-                            }}
-                            image="https://via.placeholder.com/300x200"
-                            title="Sponsor 4"
-                        />
-                    </Card>
-                </Grid>
+                {
+                    sponsor.map((item, index) => (
+                        <Grid item xs={6} sm={4} md={3} key={index}>
+                            <img
+                                src={
+                                    builder.image(item.Image)
+                                        .width(300)
+                                        .height(150)
+                                        .url()
+                                }
+                                alt="sponsor"
+                                sx={{
+                                    maxWidth: '100%',
+                                    height: 'auto',
+                                }}
+                            />
+                        </Grid>
+                    ))
+                }
+                
             </Grid>
 
 

@@ -1,9 +1,20 @@
 import React from 'react';
 import { Container, Grid, Typography } from '@mui/material';
 import { theme } from '../theme';
+import { client,builder } from '../api/SanityClient';
 
 
 const Sponsor = () => {
+  const [sponsor, setSponsor] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchSponsor = async () => {
+      const sponsor = await client.fetch(`*[_type == "Sponsers"]`);
+      setSponsor(sponsor);
+      console.log(sponsor);
+    }
+    fetchSponsor();
+  }, []);
 
   return (
     <Container maxWidth="lg"
@@ -19,38 +30,26 @@ const Sponsor = () => {
       <Grid container spacing={3}
         sx={{ marginY: '20px' }}
       >
-        <Grid item  xs={12} sm={6} md={4}>
-          <img
-            src="https://via.placeholder.com/300x150"
-            alt="sponsor"
-            sx={{
-              maxWidth: '100%',
-              height: 'auto',
-            }}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <img
-            src="https://via.placeholder.com/300x150"
-            alt="sponsor"
+        {
+          sponsor.map((item, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <img
+                src={
+                  builder.image(item.Image)
+                    .width(300)
+                    .height(150)
+                    .url()
+                }
+                alt="sponsor"
+                sx={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
+            </Grid>
+          ))
 
-            sx={{
-              maxWidth: '100%',
-              height: 'auto',
-            }}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <img
-            src="https://via.placeholder.com/300x150"
-            alt="sponsor"
-
-            sx={{
-              maxWidth: '100%',
-              height: 'auto',
-            }}
-          />
-        </Grid>
+        }
       </Grid>
     </Container>
   );
