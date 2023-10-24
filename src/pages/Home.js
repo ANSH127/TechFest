@@ -55,7 +55,7 @@ const HomePage = () => {
                 <Grid item xs={12} md={5} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Box sx={{ flexGrow: 1 }}>
                         <Typography variant="h4" component="h2" gutterBottom sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', paddingX: '10px' }}>
-                            DISCOVER  <span style={{ color: theme.secondary }}>TECHFEST</span> 2023
+                            I love u  <span style={{ color: theme.secondary }}>S</span> 2023
 
                         </Typography>
                         <Typography
