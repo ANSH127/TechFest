@@ -5,6 +5,7 @@ import { client } from '../api/SanityClient'
 
 import { useParams } from 'react-router-dom'
 import NotFound from '../components/404'
+import supabase from '../api/SupabaseClient'
 
 export default function RegisterPage() {
     const { slug } = useParams();
@@ -14,8 +15,10 @@ export default function RegisterPage() {
     const [phone, setPhone] = React.useState('');
     const [regno, setRegno] = React.useState('');
     const [isValid, setIsValid] = React.useState(true);
+    const [handleSubmiting, setHandleSubmiting] = React.useState(false);
 
-    const handleSubmit = () => {
+
+    const handleSubmit = async() => {
         if (name === '' || email === '' || phone === '' || regno === '') {
             alert('Please fill all the fields');
             return;
@@ -32,7 +35,24 @@ export default function RegisterPage() {
             alert('Please enter a valid registration number');
             return;
         }
+        setHandleSubmiting(true);
+
+
+        const {error } = await supabase.from('registrations').insert([
+            { name, email, phone, reg_no:regno, event_name: slug },
+        ]);
+        if (error) {
+            alert('Something went wrong');
+            return;
+        }
+        setName('');
+        setEmail('');
+        setPhone('');
+        setRegno('');
+
         alert('Your message has been sent');
+        setHandleSubmiting(false);
+
 
     }
 
@@ -118,7 +138,11 @@ export default function RegisterPage() {
                 <div style={{ marginTop: '10px', textAlign: 'center' }}>
 
 
-                    <button onClick={handleSubmit} className="orange-button">Submit</button>
+                    <button onClick={handleSubmit} className="orange-button"
+                        disabled={handleSubmiting} style={{
+                            cursor: handleSubmiting ? 'not-allowed' : 'pointer',
+                        }}
+                    >Submit</button>
                 </div>
 
 
