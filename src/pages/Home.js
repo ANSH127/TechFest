@@ -110,10 +110,10 @@ const HomePage = () => {
                     Our <span style={{ color: theme.secondary }}>Sponsors</span>
                 </Typography>
             </Grid>
-            <Grid container spacing={2} sx={{ paddingX: '10px' }}>
+            <Grid container  sx={{ paddingX: '10px' }}>
                 {
                     sponsor.map((item, index) => (
-                        <Grid item xs={6} sm={4} md={3} key={index}>
+                        <Grid item xs={12} sm={6} md={4} key={index}>
                             <img
                                 src={
                                     builder.image(item.Image)
