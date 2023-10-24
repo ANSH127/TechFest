@@ -8,6 +8,7 @@ import { format } from 'date-fns'
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Link } from 'react-router-dom'
+import NotFound from '../components/404'
 
 
 
@@ -32,31 +33,11 @@ export default function EventDetails() {
     }, [slug])
 
     if (!event && !isValid) return (
-        <Box
-            sx={{
-                margin: 'auto',
-                width: {
-                    xs: '90%',
-                    md: '80%',
-                },
-                color: '#ffffff',
-                marginTop: '3rem'
-            }}>
-            <Typography variant="h4" align="center"
-                sx={{
-                    fontFamily: 'monospace',
-                    fontWeight: 700,
-                    letterSpacing: '.1rem',
-                    color: theme.color
-                }}
-            >
-                No such event found
-            </Typography>
-        </Box>
+        <NotFound />
     )
 
 
-    if (!event && isValid ) return (
+    if (!event && isValid) return (
         <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
             open={true}
@@ -125,7 +106,7 @@ export default function EventDetails() {
                 </Typography>
                 {/* register button */}
                 <Link to={`/register/${event.slug.current}`} style={{ textDecoration: 'none' }}>
-                <button style={{margin:'10px'}} className="orange-button">Register</button>
+                    <button style={{ margin: '10px' }} className="orange-button">Register</button>
                 </Link>
 
 

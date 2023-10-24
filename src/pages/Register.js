@@ -4,6 +4,8 @@ import { theme } from '../theme/index'
 import { client } from '../api/SanityClient'
 
 import { useParams } from 'react-router-dom'
+import NotFound from '../components/404'
+
 export default function RegisterPage() {
     const { slug } = useParams();
 
@@ -47,23 +49,7 @@ export default function RegisterPage() {
 
     if (!isValid) {
         return (
-            <Box sx={{
-                margin: 'auto',
-                width: {
-                    xs: '90%',
-                    md: '80%',
-                },
-                color: '#ffffff',
-                marginTop: '3rem'
-            }}>
-                <Typography variant="h4" align="center"
-                    sx={{
-                        fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color
-                    }}
-                >
-                    Event not found
-                </Typography>
-            </Box>
+            <NotFound />
         )
     }
 

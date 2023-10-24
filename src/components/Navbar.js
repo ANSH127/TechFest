@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import { theme } from '../theme/index';
+import logo from '../img/logo2.png';
 
 
 
@@ -62,7 +63,7 @@ export default function Navbar() {
                         }}
                     >
                         <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-                            <img src='./images/logo2.png' alt="logo" style={{
+                            <img src={logo} alt="logo" style={{
                                 width: '90px',
                                 height: '70px',
 
@@ -100,7 +101,7 @@ export default function Navbar() {
                         }}
                     >
                         <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-                            <img src='./images/logo2.png' alt="logo" style={{
+                            <img src={logo} alt="logo" style={{
                                 width: '100px',
                                 height: '70px',
 
