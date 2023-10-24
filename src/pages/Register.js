@@ -141,6 +141,9 @@ export default function RegisterPage() {
                     <button onClick={handleSubmit} className="orange-button"
                         disabled={handleSubmiting} style={{
                             cursor: handleSubmiting ? 'not-allowed' : 'pointer',
+                            backgroundColor: handleSubmiting ? '#ffffff' : theme.secondary,
+                            color: handleSubmiting ? theme.secondary : '#ffffff'
+                            
                         }}
                     >Submit</button>
                 </div>

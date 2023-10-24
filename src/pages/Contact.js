@@ -8,6 +8,8 @@ export default function ContactPage() {
     const [email, setEmail] = React.useState('');
     const [phone, setPhone] = React.useState('');
     const [message, setMessage] = React.useState('');
+    const [handleSubmiting, setHandleSubmiting] = React.useState(false);
+
 
     const handleSubmit = async() => {
         if (name === '' || email === '' || phone === '' || message === '') {
@@ -22,6 +24,7 @@ export default function ContactPage() {
             alert('Please enter a valid phone number');
             return;
         }
+        setHandleSubmiting(true);
 
         const {error } = await supabase.from('contact').insert([
             { name, email, phone, message },
@@ -30,7 +33,12 @@ export default function ContactPage() {
             alert('Something went wrong');
             return;
         }
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
         alert('Your message has been sent');
+        setHandleSubmiting(false);
 
 
     }
@@ -96,7 +104,14 @@ export default function ContactPage() {
                 <div style={{ marginTop: '10px', textAlign: 'center' }}>
 
 
-                    <button onClick={handleSubmit} className="orange-button">Submit</button>
+                    <button onClick={handleSubmit} className="orange-button"
+                        disabled={handleSubmiting}
+                        style={{
+                            backgroundColor: handleSubmiting ? '#ffffff' : theme.secondary,
+                            color: handleSubmiting ? theme.secondary : '#ffffff',
+                            cursor: handleSubmiting ? 'not-allowed' : 'pointer'
+                        }}
+                    >Submit</button>
                 </div>
 
 
