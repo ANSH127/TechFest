@@ -7,6 +7,9 @@ import { useParams } from 'react-router-dom'
 import NotFound from '../components/404'
 import supabase from '../api/SupabaseClient'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function RegisterPage() {
     const { slug } = useParams();
 
@@ -49,8 +52,7 @@ export default function RegisterPage() {
         setEmail('');
         setPhone('');
         setRegno('');
-
-        alert('Your message has been sent');
+        toast.success('Your registration has been sent');
         setHandleSubmiting(false);
 
 
@@ -150,6 +152,8 @@ export default function RegisterPage() {
 
 
             </Box>
+            <ToastContainer />
+
 
 
         </Box>

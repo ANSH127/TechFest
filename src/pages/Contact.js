@@ -3,6 +3,10 @@ import { Box, Typography} from '@mui/material'
 import { theme } from '../theme/index'
 import supabase from '../api/SupabaseClient';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 export default function ContactPage() {
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -37,7 +41,7 @@ export default function ContactPage() {
         setEmail('');
         setPhone('');
         setMessage('');
-        alert('Your message has been sent');
+        toast.success('Your message has been sent');
         setHandleSubmiting(false);
 
 
@@ -116,6 +120,8 @@ export default function ContactPage() {
 
 
             </Box>
+            <ToastContainer />
+
 
 
         </Box>
