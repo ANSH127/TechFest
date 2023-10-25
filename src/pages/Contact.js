@@ -34,7 +34,7 @@ export default function ContactPage() {
             { name, email, phone, message },
         ]);
         if (error) {
-            alert('Something went wrong');
+            toast.error('Something went wrong');
             return;
         }
         setName('');

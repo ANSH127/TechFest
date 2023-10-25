@@ -45,7 +45,7 @@ export default function RegisterPage() {
             { name, email, phone, reg_no:regno, event_name: slug },
         ]);
         if (error) {
-            alert('Something went wrong');
+            toast.error('Something went wrong');
             return;
         }
         setName('');
