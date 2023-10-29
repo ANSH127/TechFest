@@ -20,7 +20,6 @@ const HomePage = () => {
         const fetchSponsor = async () => {
             const sponsor = await client.fetch(`*[_type == "Sponsers"]`);
             setSponsor(sponsor);
-            console.log(sponsor);
         }
         fetchEvents();
         fetchSponsor();
