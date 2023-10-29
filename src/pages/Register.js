@@ -41,6 +41,18 @@ export default function RegisterPage() {
         setHandleSubmiting(true);
 
 
+        // check if regno and event name already exists
+        const { data } = await supabase.from('registrations').select('*').eq('reg_no', regno).eq('event_name', slug);
+        if (data.length !== 0) {
+            toast.error('You have already registered for this event');
+            setName('');
+            setEmail('');
+            setPhone('');
+            setRegno('');
+            return;
+        }
+
+
         const {error } = await supabase.from('registrations').insert([
             { name, email, phone, reg_no:regno, event_name: slug },
         ]);

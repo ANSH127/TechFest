@@ -81,7 +81,7 @@ export default function EventDetails() {
                 }}
             >
                 <Divider />
-                <Typography variant="h3"
+                <Typography variant="h4"
                     sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color }}
                 >
                     {event.Title}

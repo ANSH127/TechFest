@@ -27,7 +27,7 @@ export default function About() {
           width:'100%',
           color: '#ffffff',
           marginTop: '3rem',
-          backgroundColor:'#f7e2d1',
+          // backgroundColor:'#f7e2d1',
           borderRadius:'5px',
           padding:'2px',
           
