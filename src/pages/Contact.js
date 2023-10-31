@@ -5,6 +5,8 @@ import supabase from '../api/SupabaseClient';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 export default function ContactPage() {
@@ -121,6 +123,17 @@ export default function ContactPage() {
 
             </Box>
             <ToastContainer />
+            
+        {
+            handleSubmiting && (
+                <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={true}
+              >
+                <CircularProgress color="inherit" />
+              </Backdrop>
+            )
+        }
 
 
 

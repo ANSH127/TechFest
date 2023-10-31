@@ -9,6 +9,8 @@ import supabase from '../api/SupabaseClient'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function RegisterPage() {
     const { slug } = useParams();
@@ -86,6 +88,7 @@ export default function RegisterPage() {
             <NotFound />
         )
     }
+
 
     return (
         <Box sx={{
@@ -166,7 +169,16 @@ export default function RegisterPage() {
             </Box>
             <ToastContainer />
 
-
+        {
+            handleSubmiting && (
+                <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={true}
+              >
+                <CircularProgress color="inherit" />
+              </Backdrop>
+            )
+        }
 
         </Box>
 
