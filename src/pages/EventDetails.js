@@ -86,24 +86,32 @@ export default function EventDetails() {
                 >
                     {event.Title}
                 </Typography>
-                <Typography variant="h6"
+                <Typography variant="p"
                     sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color }}
                 >
 
                     <span style={{ color: theme.secondary }}>Date:</span>
-                    {format(new Date(event.Date), 'dd MMMM yyyy')}
+                    {/* {format(new Date(event.Date), 'dd MMMM yyyy')} */}
+                    Will be announced soon
 
                 </Typography>
-                <Typography variant="h6"
+                <br />
+                <Typography variant="p"
                     sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color }}
                 >
-                    <span style={{ color: theme.secondary }}>Time:</span> {event.time}
+                    <span style={{ color: theme.secondary }}>Time:</span> 
+                    {/* {event.time} */}
+                    Will be announced soon
                 </Typography>
-                <Typography variant="h6"
+                <br />
+                <Typography variant="p"
                     sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color }}
                 >
-                    <span style={{ color: theme.secondary }}>Venue:</span> {event.Venue}
+                    <span style={{ color: theme.secondary }}>Venue:</span>
+                     {/* {event.Venue} */}
+                        Will be announced soon
                 </Typography>
+                <br />
                 {/* register button */}
                 <Link to={`/register/${event.slug.current}`} style={{ textDecoration: 'none' }}>
                     <button style={{ margin: '10px' }} className="orange-button">Register</button>
@@ -114,7 +122,7 @@ export default function EventDetails() {
                 <Typography variant="h6"
                     sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.1rem', paddingX: '10px', color: theme.color, marginTop: '10px' }}
                 >
-                    {event.Description}
+                    {/* {event.Description} */}
                 </Typography>
 
             </Box>

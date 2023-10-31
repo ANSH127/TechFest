@@ -40,14 +40,20 @@ export default function EventCard(props) {
                         color: 'black',
                         fontWeight: 500,
                         fontfamily: 'monospace',
-                        letterSpacing: '.1rem',
+                        // letterSpacing: '.1rem',
                         textAlign: 'justify',
+                        fontSize: 'medium',
                     }}
                 >
                     <span style={{ color: theme.secondary }}>Date:</span>
-                    {format(new Date(props.date), 'dd MMMM yyyy')}
+                    {/* {format(new Date(props.date), 'dd MMMM yyyy')} */}
+                    Will be announced soon
+
+
                     <br />
-                    <span style={{ color: theme.secondary }}>Time:</span> {props.time}
+                    <span style={{ color: theme.secondary }}>Time:</span> 
+                    {/* {props.time} */}
+                    Will be announced soon
                 </Typography>
 
 
