@@ -6,6 +6,8 @@ import EventCard from '../components/EventCard';
 import { client, builder } from '../api/SanityClient';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+import ArrowOutwardOutlinedIcon from '@mui/icons-material/ArrowOutwardOutlined';
+import { Link } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -84,12 +86,43 @@ const HomePage = () => {
 
             </Grid>
             {/* upcoming events */}
-            <Grid item xs={12} sx={{ marginY: "20px" }} >
-                <Typography variant="h4" align="center"
-                    sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', paddingX: '10px' }}
+            <Grid item xs={12} sx={{ marginY: "20px",
+                width:'90%',
+                margin:'auto',
+
+         }} >
+                <div
+
                 >
-                    Upcoming <span style={{ color: theme.secondary }}>Events</span>
-                </Typography>
+                    <Typography variant="h4" align="center"
+                        sx={{ fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', paddingX: '10px' }}
+                    >
+                        Upcoming <span style={{ color: theme.secondary }}>Events</span>
+                    </Typography>
+
+                    <Typography variant="h6"
+                        sx={{
+                            fontFamily: 'monospace',
+                            fontWeight: 300,
+                            textDecoration: 'none',
+                            fontSize: '1rem',
+                            cursor: 'pointer',
+                            marginBottom:'1rem'
+
+                        }}
+                    >
+                        <Link to="/event" style={{
+                            textDecoration: 'none',
+                            color: theme.secondary,
+                        }}  >
+
+
+                            VIEW ALL <ArrowOutwardOutlinedIcon fontSize='12' />
+                        </Link>
+                    </Typography>
+                </div>
+
+
             </Grid>
             <Grid container spacing={2} sx={{ paddingX: '10px' }} >
                 {events.map((event) => (
@@ -109,7 +142,7 @@ const HomePage = () => {
                     Our <span style={{ color: theme.secondary }}>Sponsors</span>
                 </Typography>
             </Grid>
-            <Grid container  sx={{ paddingX: '10px' }}>
+            <Grid container sx={{ paddingX: '10px' }}>
                 {
                     sponsor.map((item, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
@@ -129,7 +162,7 @@ const HomePage = () => {
                         </Grid>
                     ))
                 }
-                
+
             </Grid>
 
 
